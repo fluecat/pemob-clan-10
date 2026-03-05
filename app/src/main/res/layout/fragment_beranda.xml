@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#102216"> <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:fillViewport="true"
+    app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="88dp"> <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:background="#3313ec5b"
+        android:src="@android:drawable/ic_menu_camera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:strokeColor="#13ec5b"
+        app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Halo, Alex!!!"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imgProfile"
+            app:layout_constraintTop_toTopOf="@id/imgProfile" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat datang di RunTrack"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tvGreeting"
+            app:layout_constraintTop_toBottomOf="@id/tvGreeting" />
+
+        <ImageView
+            android:id="@+id/btnNotification"
+            android:layout_width="39dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_circle_dark"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_popup_reminder"
+            app:layout_constraintBottom_toBottomOf="@id/imgProfile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imgProfile"
+            app:tint="#CBD5E1" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="#0F172A"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="#3313ec5b"
+            app:strokeWidth="1dp"
+            app:layout_constraintTop_toBottomOf="@id/imgProfile">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="24dp">
+
+                <TextView
+                    android:id="@+id/tvStatsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL JARAK MINGGU INI"
+                    android:textColor="#13ec5b"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTotalDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="42.8"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvStatsTitle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="KM"
+                    android:textColor="#13ec5b"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTotalDistance"
+                    app:layout_constraintStart_toEndOf="@id/tvTotalDistance" />
+
+                <View
+                    android:id="@+id/dividerStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#3313ec5b"
+                    app:layout_constraintTop_toBottomOf="@id/tvTotalDistance" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintTop_toBottomOf="@id/dividerStats">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sesi" android:textColor="#94A3B8" android:textSize="12sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kalori" android:textColor="#94A3B8" android:textSize="12sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2.4k" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Waktu" android:textColor="#94A3B8" android:textSize="12sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4h 20m" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvActivityHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="Aktivitas Terakhir"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardStats" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="Lihat Semua"
+            android:textColor="#13ec5b"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tvActivityHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvActivityHeader" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardActivity1"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="#0F172A"
+            app:cardCornerRadius="12dp"
+            app:strokeColor="#1E293B"
+            app:strokeWidth="1dp"
+            app:layout_constraintTop_toBottomOf="@id/tvActivityHeader">
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <View android:id="@+id/iconRun1" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginStart="12dp" android:background="#1A13ec5b" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView android:id="@+id/tvTitleRun1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Lari Pagi" android:textColor="#FFFFFF" android:textStyle="bold" app:layout_constraintBottom_toTopOf="@+id/tvDescRun1" app:layout_constraintStart_toEndOf="@id/iconRun1" app:layout_constraintTop_toTopOf="@id/iconRun1" />
+                <TextView android:id="@+id/tvDescRun1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kemarin • 06:30 AM" android:textColor="#94A3B8" android:textSize="12sp" app:layout_constraintBottom_toBottomOf="@id/iconRun1" app:layout_constraintStart_toStartOf="@id/tvTitleRun1" />
+
+                <TextView android:id="@+id/tvDist1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="16dp" android:text="5.20 km" android:textColor="#FFFFFF" android:textStyle="bold" app:layout_constraintBottom_toTopOf="@+id/tvDur1" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/iconRun1" />
+                <TextView android:id="@+id/tvDur1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="28:40" android:textColor="#94A3B8" android:textSize="12sp" app:layout_constraintBottom_toBottomOf="@id/iconRun1" app:layout_constraintEnd_toEndOf="@id/tvDist1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#13ec5b"
+        android:src="@android:drawable/ic_input_add"
+        app:tint="#102216"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#E6102216"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_myplaces" app:tint="#13ec5b" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Beranda" android:textColor="#13ec5b" android:textSize="10sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_sort_by_size" app:tint="#94A3B8" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aktivitas" android:textColor="#94A3B8" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_dialog_map" app:tint="#94A3B8" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rute" android:textColor="#94A3B8" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_info_details" app:tint="#94A3B8" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Profil" android:textColor="#94A3B8" android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
