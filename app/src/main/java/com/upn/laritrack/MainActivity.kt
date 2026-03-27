@@ -11,15 +11,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Menyambungkan Kotlin dengan activity_main.xml
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        // Memanggil WelcomeFragment (atau BerandaFragment) agar tampil pertama kali di layar TV
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, WelcomeFragment()) // Ganti dengan nama Fragment pertamamu
-                .commit()
-        }
+        // Kita gunakan R.layout.activity_main secara langsung agar Navigation Component bekerja dengan baik
+        setContentView(R.layout.activity_main)
+        // NavHostFragment akan otomatis menampilkan startDestination (WelcomeFragment)
+        // Jadi kita tidak perlu lagi melakukan pemanggilan manual di sini.
     }
 }

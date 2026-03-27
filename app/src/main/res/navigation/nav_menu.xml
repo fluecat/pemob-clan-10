@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_menu"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.upn.laritrack.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.upn.laritrack.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <argument
+            android:name="userRegistration"
+            app:argType="com.upn.laritrack.UserRegistration"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_loginFragment_to_berandaFragment"
+            app:destination="@id/berandaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.upn.laritrack.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/berandaFragment"
+        android:name="com.upn.laritrack.BerandaFragment"
+        android:label="fragment_beranda"
+        tools:layout="@layout/fragment_beranda">
+        <action
+            android:id="@+id/action_berandaFragment_to_profilFragment"
+            app:destination="@id/profilFragment" />
+        <action
+            android:id="@+id/action_berandaFragment_to_catatLariFragment"
+            app:destination="@id/catatLariFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.upn.laritrack.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil">
+        <argument
+            android:name="runData"
+            app:argType="com.upn.laritrack.RunData"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_profilFragment_to_catatLariFragment"
+            app:destination="@id/catatLariFragment" />
+        <action
+            android:id="@+id/action_profilFragment_to_berandaFragment"
+            app:destination="@id/berandaFragment"
+            app:popUpTo="@id/berandaFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/catatLariFragment"
+        android:name="com.upn.laritrack.CatatLariFragment"
+        android:label="fragment_catat_lari"
+        tools:layout="@layout/fragment_catat_lari">
+        <action
+            android:id="@+id/action_catatLariFragment_to_profilFragment"
+            app:destination="@id/profilFragment"
+            app:popUpTo="@id/profilFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

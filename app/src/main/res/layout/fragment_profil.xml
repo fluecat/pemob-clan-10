@@ -140,6 +140,23 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNavCatatLari"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#13ec5b"
+                android:text="Mulai Catat Lari"
+                android:textAllCaps="false"
+                android:textColor="#102216"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardProfile" />
+                
             <TextView
                 android:id="@+id/tvStatsHeader"
                 android:layout_width="wrap_content"
@@ -151,7 +168,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardProfile" />
+                app:layout_constraintTop_toBottomOf="@id/btnNavCatatLari" />
 
             <LinearLayout
                 android:id="@+id/layoutStatsBoxes"
